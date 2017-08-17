@@ -7,13 +7,13 @@
   "scripts": {
     "lint": "xo",
     "test": "ava",
-    "build": "rollup index.js --format cjs --output ./dist/index.js",
+    "bundle": "rollup index.js --format cjs --output ./dist/index.js",
+    "build": "babel src -d lib",
     "prepublish": "xo && ava && babel src --out-dir lib"
   },
   "author": "billiam",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "ava": "^0.21.0",
     "babel-cli": "^6.24.1",
@@ -29,7 +29,7 @@
   },
   "babel": {
     "presets": [
-      "@ava/stage-4"
+      "es2015"
     ]
   },
   "ava": {
